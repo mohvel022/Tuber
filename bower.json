@@ -1,0 +1,22 @@
+{
+  "name": "tuber",
+  "description": "API for the tuber app (uber for tutors)",
+  "main": "server.js",
+  "authors": [
+    "Juan G Ruelas Jr (ruelas.me)"
+  ],
+  "license": "NONE",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6",
+    "jquery": "^2.2.3"
+  }
+}
