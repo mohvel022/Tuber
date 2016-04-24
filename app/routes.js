@@ -1,4 +1,6 @@
 // app/routes.js
+var api= require('./api.js')
+
 module.exports = function(app, passport) {
 
     // landing page
@@ -15,7 +17,6 @@ module.exports = function(app, passport) {
         req.logout();
         res.redirect('/');
     });
-
     // process the signup form
     app.post('/signup', passport.authenticate('local-signup', {
          successRedirect : '/profile', // redirect to the secure profile section
@@ -39,19 +40,20 @@ module.exports = function(app, passport) {
 
     app.get('/users', isLoggedIn, function(req, res){
       // return users json
-    })
+    });
     app.get('/user/:id', isLoggedIn, function(req, res){
       // return one user
-    })
+    });
 
     app.put('/users/:id', isLoggedIn, function(req, res){
 
-    })
+    });
+
     app.get('/classes', isLoggedIn, function(req, res){
 
-    })
+    });
 
-
+    /***This is used for our api for our mobile devices****/
 
 
 };

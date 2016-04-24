@@ -15,6 +15,7 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
 var db = require('./config/database.js');
+var api = require('./app/api.js')
 
 // configuration ===============================================================
 mongoose.connect(db.url, function(err){
@@ -46,8 +47,10 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
+app.use('/api', api);
 require('./config/passport')(passport); // pass passport for configuration
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+
 
 // launch ======================================================================
 app.listen(port, function(err){
